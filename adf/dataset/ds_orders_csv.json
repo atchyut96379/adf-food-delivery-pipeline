@@ -1,0 +1,32 @@
+{
+	"name": "ds_orders_csv",
+	"properties": {
+		"linkedServiceName": {
+			"referenceName": "ls_adls_food_delivery",
+			"type": "LinkedServiceReference"
+		},
+		"parameters": {
+			"batch_date": {
+				"type": "string"
+			}
+		},
+		"annotations": [],
+		"type": "DelimitedText",
+		"typeProperties": {
+			"location": {
+				"type": "AzureBlobFSLocation",
+				"fileName": "orders.csv",
+				"folderPath": {
+					"value": "@concat('orders/batch_date=', dataset().batch_date)",
+					"type": "Expression"
+				},
+				"fileSystem": "landing"
+			},
+			"columnDelimiter": ",",
+			"escapeChar": "\\",
+			"firstRowAsHeader": true,
+			"quoteChar": "\""
+		},
+		"schema": []
+	}
+}
