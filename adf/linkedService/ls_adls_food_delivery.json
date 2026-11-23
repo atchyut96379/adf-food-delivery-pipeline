@@ -1,0 +1,10 @@
+{
+	"name": "ls_adls_food_delivery",
+	"properties": {
+		"annotations": [],
+		"type": "AzureBlobFS",
+		"typeProperties": {
+			"url": "https://stfooddeliverydev2716.dfs.core.windows.net/"
+		}
+	}
+}
